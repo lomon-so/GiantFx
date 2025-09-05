@@ -1,0 +1,29 @@
+{% load static %}
+
+<!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a  href="{% url 'home' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><img  src="{% static 'img/logo.jpg' %}" alt=""></i>GIANT FX</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{% url 'home' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                <a href="{% url 'packages' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'packages' %}active{% endif %}">Packages</a>
+                <div class="nav-item dropdown">
+                 <a href="#" class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'team' or request.resolver_match.url_name == 'testimonial' %}active{% endif %}" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                     <a href="{% url 'team' %}" class="dropdown-item {% if request.resolver_match.url_name == 'team' %}active{% endif %}">Our Team</a>
+                     <a href="{% url 'testimonial' %}" class="dropdown-item {% if request.resolver_match.url_name == 'testimonial' %}active{% endif %}">Testimonial</a>
+                    </div>
+                </div>
+                <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+            </div>
+            <a href="{% url 'packages' %}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get Started<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
