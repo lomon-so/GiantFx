@@ -17,7 +17,6 @@ db.sqlite3-journal
 
 # Media & Static (user uploads, collected static files)
 media/
-static/
 staticfiles/
 
 # Virtual environment
