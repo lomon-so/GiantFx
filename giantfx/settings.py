@@ -37,7 +37,6 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'giantfx-ptu3.onrender.com').split(',')
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
